@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:desafio_de_flutter/services/auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +16,6 @@ class _LoginPage extends State<LoginPage> {
   final email = TextEditingController();
   final password = TextEditingController();
   final AuthService authService = Get.put(AuthService());
-
 
   @override
   Widget build(BuildContext context) {

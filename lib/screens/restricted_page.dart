@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../services/auth_service.dart';
+
 class RestrictedPage extends StatefulWidget {
   const RestrictedPage({Key? key});
 
@@ -9,6 +11,8 @@ class RestrictedPage extends StatefulWidget {
 }
 
 class __RestrictedPage extends State<RestrictedPage> {
+    final AuthService authService = Get.find<AuthService>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,35 +30,48 @@ class __RestrictedPage extends State<RestrictedPage> {
         backgroundColor: Colors.green.shade50,
         child: ListView(
           children: [
-            UserAccountsDrawerHeader(
-              currentAccountPicture: CircleAvatar(),
-              accountName: Text('Nome'),
-              accountEmail: Text('Email'),
-              decoration: BoxDecoration(color: Colors.greenAccent.shade700),
-            ),
+            Obx(() {
+              final user = authService.usuario.value;
+              return UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(),
+                accountName: Text(
+                  user?.displayName ?? 'Nome de usuário não disponível',
+                  style: const TextStyle(color: Colors.white),
+                ),
+                accountEmail: Text(
+                  user?.email ?? 'Email não disponível',
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                decoration: BoxDecoration(color: Colors.greenAccent.shade700),
+              );
+            }),
             ListTile(
-              title: Text('Meu Perfil'),
-              leading: Icon(Icons.account_circle_rounded),
+              title: const Text('Meu Perfil'),
+              leading: const Icon(Icons.account_circle_rounded),
               onTap: () {
                 Get.toNamed('/edit_user');
               },
             ),
             ListTile(
-              title: Text('Home'),
-              leading: Icon(Icons.lock),
+              title: const Text('Home'),
+              leading: const Icon(Icons.home),
               onTap: () {
                 Get.offNamed('/home');
               },
             ),
             ListTile(
-              title: Text('Validar Email'),
-              leading: Icon(Icons.mail_lock),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Sair'),
-              leading: Icon(Icons.logout),
+              title: const Text(
+                'Sair',
+                style: TextStyle(color: Colors.red),
+              ),
+              leading: const Icon(
+                Icons.logout,
+                color: Colors.red,
+              ),
               onTap: () {
+                authService.logout();
                 Get.offNamed('/login');
               },
             ),

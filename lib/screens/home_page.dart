@@ -47,22 +47,22 @@ class _HomePage extends State<HomePage> {
               );
             }),
             ListTile(
-              title: Text('Meu Perfil'),
-              leading: Icon(Icons.account_circle_rounded),
+              title: const Text('Meu Perfil'),
+              leading: const Icon(Icons.account_circle_rounded),
               onTap: () {
                 Get.toNamed('/edit_user');
               },
             ),
             ListTile(
-              title: Text('Area Restrita'),
-              leading: Icon(Icons.lock),
+              title: const Text('Area Restrita'),
+              leading: const Icon(Icons.lock),
               onTap: () {
                 Get.offNamed('/restricted');
               },
             ),
             ListTile(
-              title: Text('Validar Email'),
-              leading: Icon(Icons.mail_lock),
+              title: const Text('Validar Email'),
+              leading: const Icon(Icons.mail_lock),
               onTap: () {},
             ),
             ListTile(

@@ -1,4 +1,4 @@
-import 'package:desafio_de_flutter/screens/edit_user_registration_page.dart';
+import 'package:desafio_de_flutter/screens/edit_user_page.dart';
 import 'package:desafio_de_flutter/screens/home_page.dart';
 import 'package:desafio_de_flutter/screens/login_page.dart';
 import 'package:desafio_de_flutter/screens/restricted_page.dart';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/new_user', page: () => UserRegistrationPage()),
         GetPage(name: '/home', page: () => HomePage()),
         GetPage(name: '/restricted', page: () => RestrictedPage()),
-        GetPage(name: '/edit_user', page: () => EditUserRegistrationPage()),
+        GetPage(name: '/edit_user', page: () => EditUserPage()),
       ],
       title: 'Desafio de Flutter',
       theme: ThemeData(

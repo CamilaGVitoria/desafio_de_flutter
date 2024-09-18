@@ -46,6 +46,7 @@ class AuthService extends GetxController {
         throw AuthException('Email já cadaastrado');
       }
     }
+    
   }
 
   login(String email, String password) async {
@@ -66,5 +67,18 @@ class AuthService extends GetxController {
   logout() async {
     await auth.signOut();
     getUser();
+  }
+  
+  Future<void> updateUserName(String newName) async {
+    try {
+      User? user = auth.currentUser;
+      if (user != null) {
+        await user.updateProfile(displayName: newName);
+        await user.reload();
+        getUser();
+      }
+    } on FirebaseAuthException catch (e) {
+      throw AuthException('Erro ao atualizar o nome de usuário: ${e.message}');
+    }
   }
 }
