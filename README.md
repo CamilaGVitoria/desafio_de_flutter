@@ -8,13 +8,5 @@
 
 PROJETO NÃO FINALIZADO
 
-Ordem das telas: 
-
-1ª Tela 
-
-
-<div align="center">
-<img src="" width="300px" />
-</div>
 
 
