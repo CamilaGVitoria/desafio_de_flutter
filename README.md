@@ -1,16 +1,12 @@
 # desafio_de_flutter
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## O que é:
 
-A few resources to get you started if this is your first Flutter project:
+É um aplicativo que desenvolvi para um processo seletivo de estágio, onde o objetivo era desenvolver o máximo possível do frontend do aplicativo em um determinado periodo de tempo, todas as instruções de como as telas seriam foram passadas previamente. 
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+PROJETO NÃO FINALIZADO
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+
